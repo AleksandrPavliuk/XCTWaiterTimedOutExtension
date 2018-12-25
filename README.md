@@ -32,14 +32,14 @@ final class SomeMediatorTests: XCTestCase {
 
         mediator.refreshUnreadNotifications()
 
-	// Closure will be executed after delay, in that case all async operations inside view 
-	// updating process will have time to execute
+	// Closure will be executed after delay, in that case all async 
+	// operations inside view updating process will have time to execute
         XCTWaiter.waitForExpectation(
             withDescription: "Waiting for notifications refresh",
             timedOut: 1,
             andVerify: {
-            	// In the end of process, mediator should trigger view to update and give new viewModel for that, 
-		// error should be nil
+            	// In the end of process, mediator should trigger view to
+		// update and give new viewModel for that, error should be nil
                 XCTAssertNotNil(self.view.viewModel)
                 XCTAssertNil(self.view.error)
         }
@@ -55,8 +55,8 @@ final class SomeMediatorTests: XCTestCase {
             withDescription: "Waiting for notifications refresh failed",
             timedOut: 1,
             andVerify: {
-            	// In the end of process, mediator should trigger view to update and give error instance, 
-		// viewModel should be nil
+            	// In the end of process, mediator should trigger view to 
+		// update and give error instance, viewModel should be nil
                 XCTAssertNil(self.view.viewModel)
                 XCTAssertNotNil(self.view.error)
         }
