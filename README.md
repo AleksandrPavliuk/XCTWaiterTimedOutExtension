@@ -1,6 +1,6 @@
 # Source
 
-```
+```swift
 extension XCTWaiter {
     static func waitForExpectation(withDescription: String,
                                    timedOut seconds: TimeInterval,
@@ -13,7 +13,7 @@ extension XCTWaiter {
 ```
 
 # Usage
-```
+```swift
 final class SomeMediatorTests: XCTestCase {
 
     var api: APIServiceMock!
