@@ -4,10 +4,10 @@
 extension XCTWaiter {
     static func waitForExpectation(withDescription: String,
                                    timedOut seconds: TimeInterval,
-                                   andVerify assetsBlock:(() -> Void)) {
+                                   andVerify assertsBlock:(() -> Void)) {
         let expectation = XCTestExpectation(description: withDescription)
         let _ = XCTWaiter.wait(for: [expectation], timeout: seconds)
-        assetsBlock()
+        assertsBlock()
     }
 }
 ```
